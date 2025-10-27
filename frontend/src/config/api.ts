@@ -1,5 +1,5 @@
 export const API_CONFIG = {
-  BASE_URL: 'http://127.0.0.1:5000/', // Your local backend API base URL
+  BASE_URL: 'https://second-dashboard.onrender.com', // Your local backend API base URL
   ENDPOINTS: {
     REAL_TIME_DATA: '/data',
     HISTORICAL_DATA: '/historical_data',
