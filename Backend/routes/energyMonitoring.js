@@ -39,7 +39,7 @@ const upload = multer({
 async function connectToDatabase() {
     const client = new MongoClient(uri);
     await client.connect();
-    return client.db('test');
+    return client.db('Testing');
 }
 
 // Endpoint to aggregate total cost of energy by department
@@ -47,7 +47,7 @@ router.get('/api/aggregate-energy-costs', async (req, res) => {
     const client = new MongoClient(uri);
     try {
         await client.connect();
-        const database = client.db('test');
+        const database = client.db('Testing');
         const collection = database.collection('EnergyMonitoring');
 
         // Aggregate total cost of energy for each department
@@ -96,7 +96,7 @@ router.get('/api/avgKWH', async (req, res) => {
    const client = new MongoClient(uri);
    try {
        await client.connect();
-       const database = client.db('test');
+       const database = client.db('Testing');
        const collection = database.collection('EnergyMonitoring');
 
        // Calculate date-wise average of KWH_Tonne for Machine IDs "IF1" and "IF2"
@@ -158,7 +158,7 @@ router.get('/api/KWHParts', async (req, res) => {
     const client = new MongoClient(uri);
     try {
         await client.connect();
-        const database = client.db('test');
+        const database = client.db('Testing');
         const collection = database.collection('EnergyMonitoring');
 
         // Aggregate KWH_part by date and machine ID
@@ -217,7 +217,7 @@ router.get('/api/ConsumptionMoltenMetal', async (req, res) => {
     const client = new MongoClient(uri);
     try {
         await client.connect();
-        const database = client.db('test');
+        const database = client.db('Testing');
         const collection = database.collection('EnergyMonitoring');
 
         // Aggregate data by date, summing molten metal and consumption
@@ -264,7 +264,7 @@ router.get('/api/TimeZone', async (req, res) => {
     const client = new MongoClient(uri);
     try {
         await client.connect();
-        const database = client.db('test');
+        const database = client.db('Testing');
         const collection = database.collection('EnergyMonitoring');
 
         const aggregatedData = await collection.aggregate([
@@ -367,7 +367,7 @@ router.get('/api/consumption', async (req, res) => {
     const client = new MongoClient(uri);
     try {
         await client.connect();
-        const database = client.db('test');
+        const database = client.db('Testing');
         const collection = database.collection('EnergyMonitoring');
 
         const aggregatedData = await collection.aggregate([
@@ -470,7 +470,7 @@ router.get('/api/energyMonitoring', async (req, res) => {
     const client = new MongoClient(uri);
     try {
         await client.connect();
-        const database = client.db('test');
+        const database = client.db('Testing');
         const collection = database.collection('EnergyMonitoring');
 
         // Retrieve all documents from the EnergyMonitoring collection
@@ -490,7 +490,7 @@ router.post('/api/chat-response', async (req, res) => {
     const mongoClient = new MongoClient(uri);
     try {
         await mongoClient.connect();
-        const database = mongoClient.db('test');
+        const database = mongoClient.db('Testing');
 
         // First, ask the LLM to determine the relevant collection
         const collectionSelectionPrompt = `
@@ -709,7 +709,7 @@ router.post('/api/upload-energy-data', upload.single('file'), async (req, res) =
         }
 
         await client.connect();
-        const database = client.db('test');
+        const database = client.db('Testing');
         const collection = database.collection('EnergyMonitoring');
 
         // Parse CSV data
