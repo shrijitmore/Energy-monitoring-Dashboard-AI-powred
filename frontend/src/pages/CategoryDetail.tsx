@@ -45,7 +45,7 @@ ChartJS.register(
   annotationPlugin
 );
 
-const API_BASE_URL = 'http://localhost:5002/api';
+const API_BASE_URL = 'https://energy-monitoring-dashboard-ai-powerd.onrender.com/api';
 
 type Card = {
   title: string;
