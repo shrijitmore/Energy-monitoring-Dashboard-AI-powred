@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB Connection with more detailed error logging
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('MongoDB connected successfully');
   })
